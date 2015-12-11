@@ -35,7 +35,8 @@ return array(
 
             'mini-module/index/index' => __DIR__ . '/../view/index/index.phtml',
             'mini-module/index/form' => __DIR__ . '/../view/index/form.phtml',
-            'mini-module/index/traite' => __DIR__ . '/../view/index/traite.phtml',
+            'mini-module/index/traite' => __DIR__ . '/../view/index/traite.phtml'
+
         ),
     ),
 
@@ -43,5 +44,15 @@ return array(
         'invokables' => array(
             'MiniModule\Controller\Index' => 'MiniModule\Controller\IndexController',
         )
-    )
+    ),
+    
+    'service_manager' => array(
+        'factories' => array(
+            'MiniModule\Form\Authentification' => 'MiniModule\Form\AuthentificationFormFactory',
+        ),
+        'services' => array (
+            'config_authentification_form' => include __DIR__.'/authentification.form.config.php',
+        ),
+    ),
+    
 );
