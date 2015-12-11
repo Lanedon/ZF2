@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form">
+                <div class="form-group">
+                    <?php
+                    $form = $this->form;
+                    $form->prepare();
+                    echo $this->form($form);
+                    ?>
+                </div>
+            </form>
+        </ul>
+    </div>
+</nav>
+

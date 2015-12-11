@@ -32,10 +32,12 @@ return array(
             '404' => __DIR__ . '/../view/404.phtml',
             'error' => __DIR__ . '/../view/error.phtml',
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/layoutForm' => __DIR__ . '/../view/layout/layoutForm.phtml',
 
             'mini-module/index/index' => __DIR__ . '/../view/index/index.phtml',
             'mini-module/index/form' => __DIR__ . '/../view/index/form.phtml',
-            'mini-module/index/traite' => __DIR__ . '/../view/index/traite.phtml'
+            'mini-module/index/traite' => __DIR__ . '/../view/index/traite.phtml',
+            'mini-module/index/formauth' => __DIR__ . '/../view/index/formauth.phtml'
 
         ),
     ),
@@ -49,9 +51,12 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'MiniModule\Form\Authentification' => 'MiniModule\Form\AuthentificationFormFactory',
+            'MiniModule\Form\Navbar' => 'MiniModule\Form\NavbarFormFactory',
+
         ),
         'services' => array (
             'config_authentification_form' => include __DIR__.'/authentification.form.config.php',
+            'navbar_config_form' => include __DIR__.'/navbar.form.config.php'
         ),
     ),
     

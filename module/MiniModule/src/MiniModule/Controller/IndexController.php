@@ -39,5 +39,20 @@ class IndexController extends AbstractActionController
         return array( 'login' => $_POST['login'] );
     }
     
-    
+    public function formauthAction() {
+        $this->layout('layout/layoutForm');
+        $services = $this->getServiceLocator();
+        $form = $services->get('MiniModule\Form\Navbar');
+        /*if ( $this->getRequest()->isPost() ) {
+            $form->setData( $this->getRequest()->getPost());
+            if ($form->isValid()) {
+                $vm = new ViewModel();
+                $vm->setVariables( $form->getData() );
+                $vm->setTemplate('mini-module/index/traite');
+                return $vm;
+            }
+        }*/
+        $form->setAttribute('action', $this->url()->fromRoute('default', array('action' => 'form' )) );
+        return array( 'form' => $form );
+    }
 }
